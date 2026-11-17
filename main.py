@@ -111,3 +111,59 @@ while True :
         cnt += 1
         c.color = colors[cnt%2]
         
+trishape = shapes.triangle(xscale=0.2, yscale=1)
+circpath = paths.circle(scale=1)
+oddring = extrusion(shape=trishape, path=circpath,opacity = 1,pos = vec(5,0,0))
+top = cylinder(size = vec(0.1,1,1),pos = vec(5,0.4,0), axis = vec(0,1,0))
+
+cup1 = compound([oddring,top])
+
+
+trishape = shapes.triangle(xscale=0.2, yscale=1)
+circpath = paths.circle(scale=1)
+oddring = extrusion(shape=trishape, path=circpath,opacity = 1,pos = vec(0,0,0))
+top = cylinder(size = vec(0.1,1,1),pos = vec(0,0.4,0), axis = vec(0,1,0))
+
+cup2 = compound([oddring,top])
+
+trishape = shapes.triangle(xscale=0.2, yscale=1)
+circpath = paths.circle(scale=1)
+oddring = extrusion(shape=trishape, path=circpath,opacity = 1,pos = vec(-5,0,0))
+top = cylinder(size = vec(0.1,1,1),pos = vec(-5,0.4,0), axis = vec(0,1,0))
+
+cup3 = compound([oddring,top])
+
+cups = [cup1,cup2,cup3]
+colors = [color.red, color.blue, color.green]
+cnt = 0
+while True : 
+    rate(100)
+    k = keysdown()
+    if ' ' in k:
+        sleep(0.052)
+        cup1.color = colors[cnt%3]
+        cnt += 1      
+        cup2.color = colors[cnt%3]
+        cnt += 1      
+        cup3.color = colors[cnt%3]
+        cnt += 1     
+    cnt += 1
+
+
+
+
+
+
+s = sphere(size = vec(3,3,3))
+
+where = [-5,0,5]
+cnt = 0
+while True : 
+    rate(100)
+    k = keysdown()
+    if ' ' in k :
+        sleep(0.052)
+        s.pos.x = where[cnt%3]
+    cnt += 1   
+        
+     
