@@ -168,3 +168,6 @@ while True :
         
 sphere(texture = "https://i.postimg.cc/dV3pfRYr/snow.jpg")
 sphere(pos = vec(-2,0,0), texture="https://i.postimg.cc/N091ZFFL/geulim1.png")     
+
+
+
