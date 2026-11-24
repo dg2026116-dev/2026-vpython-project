@@ -170,4 +170,80 @@ sphere(texture = "https://i.postimg.cc/dV3pfRYr/snow.jpg")
 sphere(pos = vec(-2,0,0), texture="https://i.postimg.cc/N091ZFFL/geulim1.png")     
 
 
+back = box(texture = "https://i.postimg.cc/KYqz2DKH/cb816782dc8d361581fbe98f8eab67c8bce98c6c-high-1.webp&quot;, size = vec(80,50,3),pos=vec(0,4,-2))
+table = box(size = vec(50,1.8,14), texture = "https://i.postimg.cc/kgmz7NS0/geulim4.jpg&quot;, pos=vec(0,-3.2,6.6))
+menu = box(texture="https://i.postimg.cc/N091ZFFL/geulim1.png&quot;, size = vec(80,50,3),pos=vec(0,4,20))
+
+trishape = shapes.triangle(xscale=1.4, yscale=5)
+circpath = paths.circle(scale=5)
+oddring = extrusion(shape=trishape, path=circpath,opacity = 1,pos = vec(1,0,5))
+top = cylinder(size = vec(0.7,5,5),pos = vec(1,1.5,5), axis = vec(0,1,0))
+cup1 = compound([oddring,top])
+
+trishape = shapes.triangle(xscale=1.4, yscale=5)
+circpath = paths.circle(scale=5)
+oddring = extrusion(shape=trishape, path=circpath,opacity = 1,pos = vec(21,0,5))
+top = cylinder(size = vec(0.7,5,5),pos = vec(21,1.5,5), axis = vec(0,1,0))
+cup2 = compound([oddring,top])
+
+trishape = shapes.triangle(xscale=1.4, yscale=5)
+circpath = paths.circle(scale=5)
+oddring = extrusion(shape=trishape, path=circpath,opacity = 1,pos = vec(-20,0,5))
+top = cylinder(size = vec(0.7,5,5),pos = vec(-20,1.5,5), axis = vec(0,1,0))
+cup3 = compound([oddring,top])
+
+s = sphere(radius = 1.7,texture = "https://i.postimg.cc/dV3pfRYr/snow.jpg&quot;, pos = vec(0,6,0))
+where = [vec(-5,0,0) , vec(0,0,0) , vec(5,0,0)]
+wnt = 0
+fin = [2,6.3,9.4,9.5,9.6,9.5]
+
+cups = [cup1,cup2,cup3]
+colors = [color.red, color.blue, color.green]
+cnt = 0
+while True :
+    rate(100)
+    k = keysdown()
+    if ' ' in k:
+        sleep(0.048)
+        cup1.color = colors[cnt%3]
+        cnt += 1      
+        cup2.color = colors[cnt%3]
+        cnt += 1      
+        cup3.color = colors[cnt%3]
+        cnt += 1    
+    cnt += 1
+    if 'b' in k:
+        sleep(0.052)
+        s.pos = where[wnt%3]
+    wnt += 1
+    if '1' in k:
+        sleep(0.052)
+        cup1.pos.y = fin[0]
+        cup2.pos.y = fin[0]
+        cup3.pos.y = fin[0]
+        sleep(0.03)
+        cup1.pos.y = fin[1]
+        cup2.pos.y = fin[1]
+        cup3.pos.y = fin[1]
+        sleep(0.03)
+        cup1.pos.y = fin[2]
+        cup2.pos.y = fin[2]
+        cup3.pos.y = fin[2]
+        sleep(0.03)
+        cup1.pos.y = fin[3]
+        cup2.pos.y = fin[3]
+        cup3.pos.y = fin[3]
+        sleep(0.03)
+        cup1.pos.y = fin[4]
+        cup2.pos.y = fin[4]
+        cup3.pos.y = fin[4]
+        sleep(0.03)
+        cup1.pos.y = fin[5]
+        cup2.pos.y = fin[5]
+        cup3.pos.y = fin[5]
+        sleep(0.03)
+        cup1.pos.y = fin[6]
+        cup2.pos.y = fin[6]
+        cup3.pos.y = fin[6]
+
 
